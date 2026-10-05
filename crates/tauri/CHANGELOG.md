@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.12.2]
+
+### Bug Fixes
+
+- [`79d353762`](https://www.github.com/tauri-apps/tauri/commit/79d3537620ddd136b81896b2048207e7c15e08b9) ([#15783](https://www.github.com/tauri-apps/tauri/pull/15783) by [@sijie-Z](https://www.github.com/tauri-apps/tauri/../../sijie-Z)) On macOS, `process::restart` (and `AppHandle::restart`) now relaunches the app bundle through LaunchServices (`open -n`) so the new instance no longer inherits the exiting process's stdio and process group, which crashed it on its first print when the original stdout/stderr reader was gone (e.g. launched from a terminal that was closed). Arguments are still forwarded.
+
 ## [2.12.1]
 
 ### Bug Fixes
